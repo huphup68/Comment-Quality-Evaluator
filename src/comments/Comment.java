@@ -17,9 +17,22 @@ public class Comment {
 		this.filtered = filtered;
 	}
 	/** Removes parts of the comment syntax so it complies better with natural language */
-	public void filter() {
-		// TODO: Implement method for filtering comments
+	public String filter(String comment, char x) {
 		filtered = true;
+		
+		StringBuilder stb = new StringBuilder();
+		char[] rmString = comment.toCharArray();
+		
+		for(int i=0; i<comment.length(); i++) {
+			if(rmString[i] == '*'||rmString[i] == '/') {
+				
+			}else {
+				  stb.append(rmString[i]);
+			}
+		}
+		// TODO: Implement method for filtering comments
+		 return stb.toString();
+	 
 	}
 	/** @return The string representation of the comment */
 	public String getComment() {
