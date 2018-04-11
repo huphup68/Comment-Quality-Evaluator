@@ -7,7 +7,7 @@ public class Readability {
 	private int sentenceCount = 0;
 	private int complexWords = 0;
 	private int wordCount = 0;
-	private String[] words = {"a", "b", "c", "d", "e", "f"};
+	private String[] words = {"a", "b", "c", "d", "e", "f"};		// Temporary complex words REPLACE LATER
 	public Readability(String comment) {
 		this.comment = comment;
 		doc = new Document(this.comment);
@@ -40,6 +40,10 @@ public class Readability {
 		}
 		return false;
 	}
+	/** 
+	 * Applies the formula for calculating the Dale-Chall sore to the comment
+	 * @return The Dale-Chall score of the comment 
+	 * */
 	private double daleChallCalculator() {
 		double res;
 		res = 0.157*((double)complexWords/(double)wordCount*100) + (0.0496*((double)wordCount/(double)sentenceCount));
@@ -48,6 +52,10 @@ public class Readability {
 		}
 		return res;
 	}
+	/** 
+	 * Iterates over each word to count how many are complex and then returns score
+	 * @return The Dale-Chall score of the comment
+	 */
 	public double daleChall(){
 		for(Sentence sent : doc.sentences()) {
 			for(String word : sent.words()) {

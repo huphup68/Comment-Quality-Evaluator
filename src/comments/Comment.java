@@ -17,9 +17,7 @@ public class Comment {
 		this.filtered = filtered;
 	}
 	/** Removes parts of the comment syntax so it complies better with natural language */
-	public String filter(String comment, char x) {
-		filtered = true;
-		
+	public void filter() {
 		StringBuilder stb = new StringBuilder();
 		char[] rmString = comment.toCharArray();
 		
@@ -30,9 +28,8 @@ public class Comment {
 				  stb.append(rmString[i]);
 			}
 		}
-		// TODO: Implement method for filtering comments
-		 return stb.toString();
-	 
+		comment = stb.toString();
+		filtered = true;
 	}
 	/** @return The string representation of the comment */
 	public String getComment() {
