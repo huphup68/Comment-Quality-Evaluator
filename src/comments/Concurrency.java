@@ -3,8 +3,12 @@ package comments;
 import java.util.Arrays;
 import edu.stanford.nlp.simple.*;
 
-public class Concurrency {
-	public static final int LEVENSHTEIN_CUT_OFF_POINT = 2;
+public final class Concurrency {
+	private static final int LEVENSHTEIN_CUT_OFF_POINT = 2;
+	
+	private Concurrency() {		// The class can not be instantiated
+		
+	}
 	
 	/**
 	 * Calculates the cost of substituting characters. 0 if they are the same, 1 otherwise.
@@ -57,7 +61,7 @@ public class Concurrency {
 		Document doc = new Document(method);
 		for(Sentence sent : doc.sentences()) {
 			for(String word : sent.words()) {
-				if(levenshtein(comment, word) <= 2) {
+				if(levenshtein(comment, word) <= LEVENSHTEIN_CUT_OFF_POINT) {
 					return true;
 				}
 			}
