@@ -1,6 +1,4 @@
 package comments;
-import alex.myTest.Concurrency;
-import alex.myTest.List;
 import edu.stanford.nlp.simple.*;
 
 public class Readability {
