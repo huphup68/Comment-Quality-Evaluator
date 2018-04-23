@@ -1,9 +1,12 @@
 package comments;
+import edu.stanford.nlp.simple.*;
 
 /** responsible for storing...*/
 public class Comment {
 	private String comment;
 	private boolean filtered;
+	private int wordCount = 0;
+	private Document doc;
 	/** @param comment A string representation of the comment */
 	public Comment(String comment) {
 		this(comment, false);
@@ -30,6 +33,12 @@ public class Comment {
 		}
 		comment = stb.toString();
 		filtered = true;
+		doc = new Document(comment);
+		for(Sentence sent : doc.sentences()) {
+			for(String word : sent.words()) {
+				wordCount++;
+			}
+		}
 	}
 	/** @return The string representation of the comment */
 	public String getComment() {

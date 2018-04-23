@@ -1,4 +1,6 @@
 package comments;
+import alex.myTest.Concurrency;
+import alex.myTest.List;
 import edu.stanford.nlp.simple.*;
 
 public class Readability {
@@ -7,7 +9,6 @@ public class Readability {
 	private int sentenceCount = 0;
 	private int complexWords = 0;
 	private int wordCount = 0;
-	private String[] words = {"a", "b", "c", "d", "e", "f"};		// Temporary complex words REPLACE LATER
 	public Readability(String comment) {
 		this.comment = comment;
 		doc = new Document(this.comment);
@@ -28,11 +29,13 @@ public class Readability {
 		int mid;
 		while(bot <= top) {
 			mid = (top + bot)/2;
-			if(exWord.compareToIgnoreCase(words[mid]) < 0) {
-				top = mid -1;
-			}
-			else if(exWord.compareToIgnoreCase(words[mid]) > 0) { 
-				bot = mid +1;
+			if(Concurrency.levenshtein(DaleChallWords.getDaleChall()[mid], exWord) > 2) {
+				if(exWord.compareToIgnoreCase(DaleChallWords.getDaleChall()[mid]) < 0) {
+					top = mid -1;
+				}
+				else if(exWord.compareToIgnoreCase(DaleChallWords.getDaleChall()[mid]) > 0) { 
+					bot = mid +1;
+				}
 			}
 			else {
 				return true;

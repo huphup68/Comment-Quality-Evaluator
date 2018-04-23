@@ -29,7 +29,7 @@ public final class Concurrency {
      * @param method A word from the method
      * @return The levenshtein score from comparing the comment word and the method word
      */
-	private static int levenshtein(String comment, String method) {
+	public static int levenshtein(String comment, String method) {
 	    int[][] matrix = new int[comment.length() + 1][method.length() + 1];
 	    
 	    for (int i = 0; i <= comment.length(); i++) {
@@ -86,7 +86,7 @@ public final class Concurrency {
 				}
 			}
 		}
-		return similarCounter / wordCounter;
+		return (double)similarCounter / (double)wordCounter;
 	}
 	
 }
