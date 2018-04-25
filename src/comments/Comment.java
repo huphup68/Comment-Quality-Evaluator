@@ -36,7 +36,9 @@ public class Comment {
 		doc = new Document(comment);
 		for(Sentence sent : doc.sentences()) {
 			for(String word : sent.words()) {
-				wordCount++;
+				if(word!="." && word!= "," && word!=";" && word!=":") {
+					wordCount++;
+				}
 			}
 		}
 	}
