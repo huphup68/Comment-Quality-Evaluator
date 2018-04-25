@@ -80,9 +80,11 @@ public final class Concurrency {
 		Document doc = new Document(comment);
 		for(Sentence sent : doc.sentences()) {
 			for(String word : sent.words()) {
-				wordCounter++;
-				if(similar(word, method)) {
-					similarCounter++;
+				if(word!="." && word!= "," && word!=";" && word!=":") {
+					wordCounter++;
+					if(similar(word, method)) {
+						similarCounter++;
+					}
 				}
 			}
 		}

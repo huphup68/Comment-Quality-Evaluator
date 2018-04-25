@@ -40,6 +40,11 @@ public class Comment {
 			}
 		}
 	}
+	public int getLength() {
+		return wordCount;
+		
+	}
+	
 	/** @return The string representation of the comment */
 	public String getComment() {
 		return comment;

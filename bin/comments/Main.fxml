@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="313.0" prefWidth="382.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comments.Main_Controller">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Button fx:id="selct" layoutX="252.0" layoutY="61.0" mnemonicParsing="false" onAction="#select" text="Button" />
+    <Button fx:id="buff_Read" layoutX="252.0" layoutY="91.0" mnemonicParsing="false" onAction="#setText" text="read" />
+    <ScrollPane id="ScrollPane" layoutX="17.0" layoutY="41.0" prefHeight="118.0" prefViewportHeight="253.0" prefViewportWidth="200.0" prefWidth="197.0">
+      <content>
+        <TextArea id="text" fx:id="comment_Area" prefHeight="253.0" prefWidth="200.0" text="" wrapText="false" />
+      </content>
+    </ScrollPane>
+    <ScrollPane id="ScrollPane" layoutX="16.0" layoutY="170.0" prefHeight="118.0" prefViewportHeight="118.0" prefViewportWidth="200.0" prefWidth="197.0">
+      <content>
+        <TextArea fx:id="con_method" prefHeight="118.0" prefWidth="215.0" wrapText="true" />
+      </content>
+    </ScrollPane>
+  </children>
+</AnchorPane>

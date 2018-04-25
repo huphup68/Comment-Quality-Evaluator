@@ -54,12 +54,15 @@ public final class Readability {
 		for(Sentence sent : doc.sentences()) {
 			sentenceCount++;
 			for(String word : sent.words()) {
-				wordCount++;
+				if(word!="." && word!= "," && word!=";" && word!=":") {
+				
+					wordCount++;
 				if(!binarySearch(word)) {
 					complexWords++;
 				}
 			}
 		}
+	}
 		return daleChallCalculator(complexWords, wordCount, sentenceCount);
 	}
 }
