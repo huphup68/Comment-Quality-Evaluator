@@ -4,21 +4,35 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="313.0" prefWidth="382.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comments.Main_Controller">
+<AnchorPane prefHeight="313.0" prefWidth="464.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comments.Main_Controller">
   <!-- TODO Add Nodes -->
   <children>
-    <Button fx:id="selct" layoutX="252.0" layoutY="61.0" mnemonicParsing="false" onAction="#select" text="Button" />
-    <Button fx:id="buff_Read" layoutX="252.0" layoutY="91.0" mnemonicParsing="false" onAction="#setText" text="read" />
-    <ScrollPane id="ScrollPane" layoutX="17.0" layoutY="41.0" prefHeight="118.0" prefViewportHeight="253.0" prefViewportWidth="200.0" prefWidth="197.0">
+    <Button fx:id="selct" layoutX="245.0" layoutY="42.0" mnemonicParsing="false" onAction="#select" text="File" />
+    <Button id="buff_Read" fx:id="cal_Readability" layoutX="246.0" layoutY="100.0" mnemonicParsing="false" onAction="#calReadability" text="3" />
+    <ScrollPane id="ScrollPane" layoutX="17.0" layoutY="41.0" prefHeight="118.0" prefViewportHeight="253.0" prefViewportWidth="200.0" prefWidth="182.0">
       <content>
         <TextArea id="text" fx:id="comment_Area" prefHeight="253.0" prefWidth="200.0" text="" wrapText="false" />
       </content>
     </ScrollPane>
-    <ScrollPane id="ScrollPane" layoutX="16.0" layoutY="170.0" prefHeight="118.0" prefViewportHeight="118.0" prefViewportWidth="200.0" prefWidth="197.0">
+    <ScrollPane id="ScrollPane" layoutX="16.0" layoutY="170.0" prefHeight="118.0" prefViewportHeight="118.0" prefViewportWidth="200.0" prefWidth="182.0">
       <content>
         <TextArea fx:id="con_method" prefHeight="118.0" prefWidth="215.0" wrapText="true" />
       </content>
     </ScrollPane>
+    <Text layoutX="114.0" layoutY="27.0" scaleX="0.9976703438305362" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment Quality Evaluator" />
+    <Label layoutX="207.0" layoutY="201.0" text="Concurrency:" />
+    <Label layoutX="207.0" layoutY="217.0" text="Length of comments:" />
+    <Label layoutX="207.0" layoutY="233.0" text="Dale-chall score:" />
+    <Button fx:id="comment_Format" layoutX="246.0" layoutY="74.0" mnemonicParsing="false" onAction="#filterComment" text="2" />
+    <Button id="calConcurrency" fx:id="cal_Concurrency" layoutX="246.0" layoutY="127.0" mnemonicParsing="false" onAction="#calConcurrency" text="4" />
+    <Text layoutX="265.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
+    <Text fx:id="con" layoutX="331.0" layoutY="214.0" scaleX="1.000018870772947" scaleY="1.000007118736665" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+    <Text fx:id="loc" layoutX="331.0" layoutY="230.0" scaleX="1.0000154589368075" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+    <Text id="ds" fx:id="dcs" layoutX="331.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+    <Label layoutX="276.0" layoutY="103.0" prefWidth="87.0" text="Calculate readability" />
+    <Label layoutX="277.0" layoutY="76.0" prefWidth="87.0" text="Formats comment" />
+    <Label fx:id="calConcurrency" layoutX="277.0" layoutY="132.0" prefWidth="87.0" text="Calculate concurrency" />
   </children>
 </AnchorPane>
